@@ -8,7 +8,7 @@ let interestRate = 0.05;
 let years = 30;
 let name = 'dalton'
 let creditScore = 500
-let interest = .02
+
 
 
 
@@ -68,6 +68,7 @@ function mortgageCalculator(P, I, N, creditScore){
     let numerator = monthlyInterestRate * Math.pow((1+monthlyInterestRate), periods);
     let denominator = Math.pow((1+monthlyInterestRate), periods) - 1;
     let monthlyRate = principal * (numerator/ denominator);
+    
     if(creditScore > 740) {
         monthlyRate = monthlyRate * 0.95
     } else if ( creditScore <  660) {
@@ -140,7 +141,7 @@ function variableInterestRate(mortgageCalculator){
        console.log(variableInterestRate(mortgageCalculator))*/
 
     const variableInterestRate = (P, I, N) => {
-interest = interest - .02;
+
         let principal = P;
         let interestRate = I;
         let startingRate = I * .98
@@ -150,8 +151,8 @@ interest = interest - .02;
         let numerator = monthlyInterestRate * Math.pow((1+monthlyInterestRate), periods);
         let denominator = Math.pow((1+monthlyInterestRate), periods) - 1;
         let monthlyRate = principal * (numerator/ denominator);
-    for(let i = 0; i < 10; i++  ) {
-        interest+=.005;
+    for(let i = interestRate - 0.02; i < interestRate + 0.02; i=i+0.005) {
+        
         startingRate = startingRate * 1.005
         console.log(startingRate)
     }
